@@ -1,0 +1,35 @@
+{
+    "relationships": [
+
+        {
+            "relationshipId": 1,
+            "relationshipName": "estadio",
+            "otherEntityName": "estadio",
+            "relationshipType": "many-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "equipo",
+            "otherEntityField": "nombre"
+
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "localidad",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "fechaCreacion",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20151207120714",
+    "dto": "no",
+    "pagination": "pagination"
+}

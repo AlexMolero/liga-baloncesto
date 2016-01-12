@@ -1,0 +1,28 @@
+{
+    "ligaBaloncestoApp": {
+        "jugador" : {
+            "home": {
+                "title": "Jugadors",
+                "createLabel": "Créer un nouveau Jugador",
+                "createOrEditLabel": "Créer ou éditer un Jugador"
+            },
+            "created": "Un nouveau Jugador a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Jugador avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Jugador avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Jugador {{ id }} ?"
+            },
+            "detail": {
+                "title": "Jugador"
+            },
+            "nombre": "Nombre",
+            "fechaNacimiento": "FechaNacimiento",
+            "numCanastas": "NumCanastas",
+            "numAsistencias": "NumAsistencias",
+            "rebotesTotales": "RebotesTotales",
+            "posicionCampo": "PosicionCampo",
+            "dorsal": "Dorsal"
+        }
+    }
+}
+

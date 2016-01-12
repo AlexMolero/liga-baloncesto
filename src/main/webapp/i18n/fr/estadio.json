@@ -1,0 +1,24 @@
+{
+    "ligaBaloncestoApp": {
+        "estadio" : {
+            "home": {
+                "title": "Estadios",
+                "createLabel": "Créer un nouveau Estadio",
+                "createOrEditLabel": "Créer ou éditer un Estadio"
+            },
+            "created": "Un nouveau Estadio a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Estadio avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Estadio avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Estadio {{ id }} ?"
+            },
+            "detail": {
+                "title": "Estadio"
+            },
+            "nombre": "Nombre",
+            "localidad": "Localidad",
+            "equipo": "Equipo"
+        }
+    }
+}
+

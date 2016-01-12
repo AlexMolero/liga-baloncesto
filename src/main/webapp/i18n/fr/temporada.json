@@ -1,0 +1,23 @@
+{
+    "ligaBaloncestoApp": {
+        "temporada" : {
+            "home": {
+                "title": "Temporadas",
+                "createLabel": "Créer un nouveau Temporada",
+                "createOrEditLabel": "Créer ou éditer un Temporada"
+            },
+            "created": "Un nouveau Temporada a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Temporada avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Temporada avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Temporada {{ id }} ?"
+            },
+            "detail": {
+                "title": "Temporada"
+            },
+            "year": "Year",
+            "liga": "Liga"
+        }
+    }
+}
+

@@ -1,0 +1,45 @@
+{
+    "relationships": [
+
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "fechaNacimiento",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "numCanastas",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "numAsistencias",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "rebotesTotales",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "posicionCampo",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "dorsal",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20151207121420",
+    "dto": "no",
+    "pagination": "pagination"
+}

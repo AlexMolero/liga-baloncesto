@@ -1,0 +1,21 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "temporada",
+            "otherEntityName": "temporada",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "liga"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151207115859",
+    "dto": "no",
+    "pagination": "pagination"
+}

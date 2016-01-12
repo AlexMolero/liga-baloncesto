@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151222154902_added_entity_Estadio.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151207120714_added_entity_Equipo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151207115859_added_entity_Liga.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203202519_added_entity_Temporada.xml" relativeToChangelogFile="false"/>
+
+    <include file="classpath:config/liquibase/changelog/20151207121420_added_entity_Jugador.xml" relativeToChangelogFile="false"/>
+    <!-- JHipster will add liquibase changelogs here -->
+</databaseChangeLog>

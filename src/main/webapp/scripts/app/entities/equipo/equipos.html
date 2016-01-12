@@ -1,0 +1,69 @@
+<div>
+    <h2 translate="ligaBaloncestoApp.equipo.home.title">Equipos</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="equipo.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="ligaBaloncestoApp.equipo.home.createLabel">Create a new Equipo</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="ligaBaloncestoApp.equipo.nombre">Nombre</th>
+                    <th translate="ligaBaloncestoApp.equipo.localidad">Localidad</th>
+                    <th translate="ligaBaloncestoApp.equipo.fechaCreacion">FechaCreacion</th>
+                    <th translate="ligaBaloncestoApp.equipo.estadio">estadio</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="equipo in equipos track by equipo.id">
+                    <td><a ui-sref="equipo.detail({id:equipo.id})">{{equipo.id}}</a></td>
+                    <td>{{equipo.nombre}}</td>
+                    <td>{{equipo.localidad}}</td>
+                        <td>{{equipo.fechaCreacion | date:'mediumDate'}}</td>
+                    <td>
+                        <a ui-sref="estadio.detail({id:equipo.estadio.id})">{{equipo.estadio.nombre}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="equipo.detail({id:equipo.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="equipo.edit({id:equipo.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="equipo.delete({id:equipo.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li ng-show="links['first'] >= 0" ng-click="loadPage(links['first'])"><a>&lt;&lt;</a></li>
+                <li ng-show="page > 0" ng-click="loadPage(links['prev'] || 0)"><a>&lt;</a></li>
+                <li ng-show="page > 1" ng-click="loadPage(page - 2)"><a>{{page - 1}}</a></li>
+                <li ng-show="page > 0" ng-click="loadPage(page - 1)"><a>{{page}}</a></li>
+                <li class="active"><a>{{page + 1}}</a></li>
+                <li ng-show="page < links['last']" ng-click="loadPage(page + 1)"><a>{{page + 2}}</a></li>
+                <li ng-show="page < links['last'] - 1" ng-click="loadPage(page + 2)"><a>{{page + 3}}</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a>&gt;</a></li>
+                <li ng-show="links['last'] > 0" ng-click="loadPage(links['last'])"><a>&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "ligaBaloncestoApp": {
+        "liga" : {
+            "home": {
+                "title": "Ligas",
+                "createLabel": "Créer un nouveau Liga",
+                "createOrEditLabel": "Créer ou éditer un Liga"
+            },
+            "created": "Un nouveau Liga a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Liga avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Liga avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Liga {{ id }} ?"
+            },
+            "detail": {
+                "title": "Liga"
+            },
+            "nombre": "Nombre",
+            "temporada": "Temporada"
+        }
+    }
+}
+
