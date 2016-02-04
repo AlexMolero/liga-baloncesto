@@ -31,5 +31,28 @@
                                  referencedColumnNames="id"
                                  referencedTableName="liga"/>
 
+        <createTable tableName="temporada_equipo">
+            <column name="equipos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="temporadas_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="temporadas_id, equipos_id" tableName="temporada_equipo"/>
+
+        <addForeignKeyConstraint baseColumnNames="temporadas_id"
+                                 baseTableName="temporada_equipo"
+                                 constraintName="fk_temporada_equipo_equipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="temporada"/>
+
+        <addForeignKeyConstraint baseColumnNames="equipos_id"
+                                 baseTableName="temporada_equipo"
+                                 constraintName="fk_equipo_equipo_temporada_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="equipo"/>
+        
     </changeSet>
 </databaseChangeLog>

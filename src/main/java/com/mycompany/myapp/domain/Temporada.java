@@ -28,6 +28,13 @@ public class Temporada implements Serializable {
     @JoinColumn(name = "liga_id")
     private Liga liga;
 
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "temporada_equipo",
+               joinColumns = @JoinColumn(name="temporadas_id", referencedColumnName="ID"),
+               inverseJoinColumns = @JoinColumn(name="equipos_id", referencedColumnName="ID"))
+    private Set<Equipo> equipos = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -50,6 +57,14 @@ public class Temporada implements Serializable {
 
     public void setLiga(Liga liga) {
         this.liga = liga;
+    }
+
+    public Set<Equipo> getEquipos() {
+        return equipos;
+    }
+
+    public void setEquipos(Set<Equipo> equipos) {
+        this.equipos = equipos;
     }
 
     @Override

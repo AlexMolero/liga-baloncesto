@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('ligaBaloncestoApp').controller('TemporadaDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Temporada', 'Liga',
-        function($scope, $stateParams, $modalInstance, entity, Temporada, Liga) {
+    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Temporada', 'Liga', 'Equipo',
+        function($scope, $stateParams, $modalInstance, entity, Temporada, Liga, Equipo) {
 
         $scope.temporada = entity;
         $scope.ligas = Liga.query();
+        $scope.equipos = Equipo.query();
         $scope.load = function(id) {
             Temporada.get({id : id}, function(result) {
                 $scope.temporada = result;

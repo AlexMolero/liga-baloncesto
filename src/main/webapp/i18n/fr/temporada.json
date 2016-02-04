@@ -16,7 +16,8 @@
                 "title": "Temporada"
             },
             "year": "Year",
-            "liga": "Liga"
+            "liga": "Liga",
+            "equipo": "Equipo"
         }
     }
 }

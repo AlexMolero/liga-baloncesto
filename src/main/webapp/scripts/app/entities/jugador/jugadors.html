@@ -23,6 +23,7 @@
                     <th translate="ligaBaloncestoApp.jugador.rebotesTotales">RebotesTotales</th>
                     <th translate="ligaBaloncestoApp.jugador.posicionCampo">PosicionCampo</th>
                     <th translate="ligaBaloncestoApp.jugador.dorsal">Dorsal</th>
+                    <th translate="ligaBaloncestoApp.jugador.equipo">equipo</th>
                     <th></th>
                 </tr>
             </thead>
@@ -36,6 +37,9 @@
                     <td>{{jugador.rebotesTotales}}</td>
                     <td>{{jugador.posicionCampo}}</td>
                     <td>{{jugador.dorsal}}</td>
+                    <td>
+                        <a ui-sref="equipo.detail({id:jugador.equipo.id})">{{jugador.equipo.nombre}}</a>
+                    </td>
                     <td>
                         <button type="submit"
                                 ui-sref="jugador.detail({id:jugador.id})"

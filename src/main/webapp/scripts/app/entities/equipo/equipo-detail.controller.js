@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ligaBaloncestoApp')
-    .controller('EquipoDetailController', function ($scope, $rootScope, $stateParams, entity, Equipo, Estadio) {
+    .controller('EquipoDetailController', function ($scope, $rootScope, $stateParams, entity, Equipo, Temporada, Estadio, Jugador) {
         $scope.equipo = entity;
         $scope.load = function (id) {
             Equipo.get({id: id}, function(result) {

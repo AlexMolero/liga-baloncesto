@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('ligaBaloncestoApp').controller('EquipoDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Equipo', 'Estadio',
-        function($scope, $stateParams, $modalInstance, entity, Equipo, Estadio) {
+    ['$scope', '$stateParams', '$modalInstance', 'entity', 'Equipo', 'Temporada', 'Estadio', 'Jugador',
+        function($scope, $stateParams, $modalInstance, entity, Equipo, Temporada, Estadio, Jugador) {
 
         $scope.equipo = entity;
+        $scope.temporadas = Temporada.query();
         $scope.estadios = Estadio.query();
+        $scope.jugadors = Jugador.query();
         $scope.load = function(id) {
             Equipo.get({id : id}, function(result) {
                 $scope.equipo = result;

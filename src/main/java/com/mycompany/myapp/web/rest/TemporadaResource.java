@@ -92,7 +92,7 @@ public class TemporadaResource {
     @Timed
     public ResponseEntity<Temporada> getTemporada(@PathVariable Long id) {
         log.debug("REST request to get Temporada : {}", id);
-        return Optional.ofNullable(temporadaRepository.findOne(id))
+        return Optional.ofNullable(temporadaRepository.findOneWithEagerRelationships(id))
             .map(temporada -> new ResponseEntity<>(
                 temporada,
                 HttpStatus.OK))

@@ -6,6 +6,8 @@ import java.time.LocalDate;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -40,6 +42,10 @@ public class Jugador implements Serializable {
 
     @Column(name = "dorsal")
     private Integer dorsal;
+
+    @ManyToOne
+    @JoinColumn(name = "equipo_id")
+    private Equipo equipo;
 
     public Long getId() {
         return id;
@@ -103,6 +109,14 @@ public class Jugador implements Serializable {
 
     public void setDorsal(Integer dorsal) {
         this.dorsal = dorsal;
+    }
+
+    public Equipo getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
 
     @Override

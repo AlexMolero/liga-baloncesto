@@ -3,6 +3,14 @@
 
         {
             "relationshipId": 1,
+            "relationshipName": "temporada",
+            "otherEntityName": "temporada",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "equipo"
+        },
+        {
+            "relationshipId": 2,
             "relationshipName": "estadio",
             "otherEntityName": "estadio",
             "relationshipType": "many-to-one",
@@ -10,6 +18,12 @@
             "otherEntityRelationshipName": "equipo",
             "otherEntityField": "nombre"
 
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "jugador",
+            "otherEntityName": "jugador",
+            "relationshipType": "one-to-many"
         }
     ],
     "fields": [

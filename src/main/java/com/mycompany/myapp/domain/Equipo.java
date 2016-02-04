@@ -1,5 +1,6 @@
 package com.mycompany.myapp.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import java.time.LocalDate;
@@ -31,9 +32,19 @@ public class Equipo implements Serializable {
     @Column(name = "fecha_creacion")
     private LocalDate fechaCreacion;
 
+    @ManyToMany(mappedBy = "equipos")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Temporada> temporadas = new HashSet<>();
+
     @ManyToOne
     @JoinColumn(name = "estadio_id")
     private Estadio estadio;
+
+    @OneToMany(mappedBy = "equipo")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Jugador> jugadors = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -67,12 +78,28 @@ public class Equipo implements Serializable {
         this.fechaCreacion = fechaCreacion;
     }
 
+    public Set<Temporada> getTemporadas() {
+        return temporadas;
+    }
+
+    public void setTemporadas(Set<Temporada> temporadas) {
+        this.temporadas = temporadas;
+    }
+
     public Estadio getEstadio() {
         return estadio;
     }
 
     public void setEstadio(Estadio estadio) {
         this.estadio = estadio;
+    }
+
+    public Set<Jugador> getJugadors() {
+        return jugadors;
+    }
+
+    public void setJugadors(Set<Jugador> jugadors) {
+        this.jugadors = jugadors;
     }
 
     @Override

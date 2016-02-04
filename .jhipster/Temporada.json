@@ -6,6 +6,14 @@
             "otherEntityName": "liga",
             "relationshipType": "many-to-one",
             "otherEntityField": "nombre"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "equipo",
+            "otherEntityName": "equipo",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "nombre",
+            "ownerSide": true
         }
     ],
     "fields": [

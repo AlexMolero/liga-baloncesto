@@ -21,7 +21,8 @@
             "numAsistencias": "NumAsistencias",
             "rebotesTotales": "RebotesTotales",
             "posicionCampo": "PosicionCampo",
-            "dorsal": "Dorsal"
+            "dorsal": "Dorsal",
+            "equipo": "Equipo"
         }
     }
 }

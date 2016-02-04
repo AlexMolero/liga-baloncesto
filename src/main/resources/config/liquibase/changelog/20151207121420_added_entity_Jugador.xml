@@ -28,7 +28,14 @@
             <column name="rebotes_totales" type="integer"/>
             <column name="posicion_campo" type="varchar(255)"/>
             <column name="dorsal" type="integer"/>
+            <column name="equipo_id" type="bigint"/>
         </createTable>
         
+        <addForeignKeyConstraint baseColumnNames="equipo_id"
+                                 baseTableName="jugador"
+                                 constraintName="fk_jugador_equipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="equipo"/>
+
     </changeSet>
 </databaseChangeLog>

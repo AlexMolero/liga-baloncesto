@@ -18,7 +18,9 @@
             "nombre": "Nombre",
             "localidad": "Localidad",
             "fechaCreacion": "FechaCreacion",
-            "estadio": "Estadio"
+            "temporada": "Temporada",
+            "estadio": "Estadio",
+            "jugador": "Jugador"
         }
     }
 }

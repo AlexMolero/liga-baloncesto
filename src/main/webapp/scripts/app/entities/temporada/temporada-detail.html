@@ -26,6 +26,16 @@
                     <a class="form-control-static" ui-sref="liga.detail({id:temporada.liga.id})">{{temporada.liga.nombre}}</a>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <span translate="ligaBaloncestoApp.temporada.equipo">equipo</span>
+                </td>
+                <td>
+                    <span ng-repeat="equipo in temporada.equipos">
+                        <a class="form-control-static" ui-sref="equipo.detail({id: {{equipo.id}}})">{{equipo.nombre}}</a>{{$last ? '' : ', '}}
+                    <span>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
