@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+    <style>
+        table{
+            -webkit-box-shadow: 4px 6px 25px -1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 4px 6px 25px -1px rgba(0,0,0,0.75);
+            box-shadow: 4px 6px 25px -1px rgba(0,0,0,0.75);
+        }
+        tr, td {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+    <label>Filtro: <input ng-model="search.$"></label> <br>
+    <label>Nombre:<input ng-model="search.nombre"></label><br>
+    <label>Num canastas <input ng-model="search.numCanastas"></label><br>
+    <label>Rebotes totales <input ng-model="search.rebotesTotales"></label><br>
+    <table>
+        <tr><td>Nombre jugador</td><td>NumCanastas</td><td>NumRebotes</td></tr>
+        <tr ng-repeat="jugador in jugadores | filter:search">
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.nombre}}</td>
+            <td ng-if="$even">{{jugador.nombre}}</td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.numCanastas}}</td>
+            <td ng-if="$even">{{jugador.numCanastas}}</td>
+            <td ng-if="$odd" style="background-color:#f1f1f1">{{jugador.rebotesTotales}}</td>
+            <td ng-if="$even">{{jugador.rebotesTotales}}</td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("/api/jugadors").then(function (response) {
+            $scope.jugadores = response.data;
+
+            $scope.pruebaAlfredo="prueba";
+        });
+    });
+</script>
+
+</body>
+</html>
