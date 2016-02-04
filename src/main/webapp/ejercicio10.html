@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+    <style>
+        table{
+            -webkit-box-shadow: 4px 6px 25px -1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 4px 6px 25px -1px rgba(0,0,0,0.75);
+            box-shadow: 4px 6px 25px -1px rgba(0,0,0,0.75);
+        }
+        tr, td {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+
+    <table>
+        <tr><td>Nombre jugador</td><td>NumCanastas</td><td>NumRebotes</td></tr>
+        <tr ng-repeat="jugador in jugadores">
+            <td>{{ jugador.nombre}}</td>
+            <td>{{jugador.numCanastas}}</td>
+            <td>{{jugador.rebotesTotales}}</td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("/api/jugadors").then(function (response) {
+            $scope.jugadores = response.data;
+
+            $scope.pruebaAlfredo="prueba";
+        });
+    });
+</script>
+
+</body>
+</html>
