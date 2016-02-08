@@ -12,25 +12,46 @@
     }
 </style>
 <div ng-app="ligaBaloncestoApp" ng-controller="creacionCtrl">
-    <div>
+    <div class="modal-header"><h4 class="modal-title ng-scope">Ejercicio 15</h4></div>
+    <div class="modal-body">
         <form name="formJugador" ng-submit="save()">
-            Nombre: <input type="text" name="nombre" ng-model="jugador.nombre" required/>
-            <span ng-show="formJugador.nombre.$touched && formJugador.nombre.$invalid">El nombre es requerido</span><br/>
 
-            Posicion: <input type="text" name="posicionCampo" ng-model="jugador.posicionCampo" required/>
-            <span ng-show="formJugador.posicionCampo.$touched && formJugador.posicionCampo.$invalid">La posicion es requerida</span><br/>
-
-            Asistencias Totales: <input type="number" name="numAsistencias" ng-model="jugador.numAsistencias" required/>
-            <span ng-show="formJugador.numAsistencias.$touched && formJugador.numAsistencias.$invalid">Requerido</span><br/>
-
-            Canastas Totales: <input type="number" name="numCanastas" ng-model="jugador.numCanastas" required/>
-            <span ng-show="formJugador.numCanastas.$touched && formJugador.numCanastas.$invalid">Requerido</span><br/>
-<!--            Equipo:
-            <select class="form-control" name="equipo" ng-model="jugador.equipo.id" >
-                <option ng-repeat ="equipo in equipos" value="{{equipo.id}}">{{equipo.nombre}}</option>
+            <div class="form-group">
+                <label >Nombre:</label>
+                <input class ="form-control" type="text" name="nombre" ng-model="jugador.nombre" required/>
+                <span ng-show="formJugador.nombre.$touched && formJugador.nombre.$invalid">El nombre es requerido</span>
+            </div>
+            <div class="form-group">
+                <label >Posicion:</label>
+                <input class ="form-control" type="text" name="posicionCampo" ng-model="jugador.posicionCampo" required/>
+                <span ng-show="formJugador.posicionCampo.$touched && formJugador.posicionCampo.$invalid">La posicion es requerida</span>
+            </div>
+            <div class="form-group">
+                <label > Asistencias Totales:</label>
+                <input class ="form-control" type="number" name="numAsistencias" ng-model="jugador.numAsistencias" required/>
+                <span ng-show="formJugador.numAsistencias.$touched && formJugador.numAsistencias.$invalid">Requerido</span>
+            </div>
+            <div class="form-group">
+                <label > Canastas Totales:</label>
+                <input class ="form-control" type="number" name="numCanastas" ng-model="jugador.numCanastas" required/>
+                <span ng-show="formJugador.numCanastas.$touched && formJugador.numCanastas.$invalid">Requerido</span>
+            </div>
+            <div class="form-group">
+                <label > Dorsal:</label>
+                <input class ="form-control" type="number" name="dorsal" ng-model="jugador.dorsal" required/>
+                <span ng-show="formJugador.dorsal.$touched && formJugador.dorsal.$invalid">Requerido</span>
+            </div>
+            <div class="form-group">
+                <label > Rebotes totales:</label>
+                <input class="form-control" type="number" name="rebotesTotales" ng-model="jugador.rebotesTotales" required/>
+                <span ng-show="formJugador.rebotesTotales.$touched && formJugador.rebotesTotales.$invalid">Requerido</span>
+            </div>
+       <!--  Equipo:
+            <select class="form-control" name="equipo" ng-model="jugador.equipos.id" >
+                <option ng-repeat ="equipos in equipo" value="{{equipos.id}}">{{equipos.nombre}}</option>
             </select>
--->
-            <button type="submit" ng-disabled="formJugador.$invalid || isSaving">
+        -->
+            <button class="btn btn-primary" type="submit" ng-disabled="formJugador.$invalid || isSaving">
                 <span>Save</span>
             </button>
         </form>
@@ -39,6 +60,7 @@
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
+<link rel="stylesheet" href="assets/styles/main.css">
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -154,13 +176,13 @@
 
 <script>
     var app = angular.module('ligaBaloncestoApp');
-    app.controller('creacionCtrl', function($scope,$http, Jugador, Equipo) {
-        $scope.equipos;
+    app.controller('creacionCtrl', function($scope, Jugador) {
+        /*$scope.equipos;
         $scope.cargarEquipos = function(){
             $http.get("/api/equipos").then(function (response){
                 $scope.equipos = response.data;
             });
-        };
+        };*/
         $scope.jugador;
         $scope.save = function () {
             $scope.isSaving = true;
