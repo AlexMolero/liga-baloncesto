@@ -82,7 +82,18 @@ public class JugadorResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/jugadors");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
-
+    /**
+     * prac2 listado segun las canastas
+     */
+    @RequestMapping(value = "/bp-by-baskets",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<List<Jugador>> getBestPlayersBaskets(Pageable pageable)
+        throws URISyntaxException {
+        List<Jugador> jugadores = jugadorRepository.findPlayersByBaskets();
+        return new ResponseEntity<>(jugadores, HttpStatus.OK);
+    }
     /**
      * GET  /jugadors/:id -> get the "id" jugador.
      */

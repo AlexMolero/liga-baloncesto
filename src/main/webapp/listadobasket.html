@@ -1,0 +1,15 @@
+<div>
+    <br/>
+    <div class="container" ng-cloak>
+        <div class="well">
+            <table>
+                <tr><td>Nombre jugador</td><td >NumCanastas</td><td>FechaNacimiento</td></tr>
+                <tr ng-repeat="jugador in jugadores">
+                    <td>{{jugador.nombre}}</td>
+                    <td>{{jugador.numCanastas}}</td>
+                    <td>{{jugador.fechaNacimiento}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

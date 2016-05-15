@@ -4,6 +4,7 @@ angular.module('ligaBaloncestoApp')
     .factory('Jugador', function ($resource, DateUtils) {
         return $resource('api/jugadors/:id', {}, {
             'query': { method: 'GET', isArray: true},
+            'findPlayersByBaskets': { method: 'GET', isArray: true, url: 'api/bp-by-baskets'},
             'get': {
                 method: 'GET',
                 transformResponse: function (data) {

@@ -22,7 +22,12 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>
-        <div ui-view="navbar" ng-cloak=""></div>
+        <div ui-view="navbar" ng-cloak="">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="prac2_ejercicio1">prac2_ejercicio1</a></li>
+            </ul>
+        </div>
         <div class="container">
             <div class="well" ui-view="content"></div>
 
@@ -181,7 +186,7 @@
     <script src="scripts/app/entities/jugador/jugador-dialog.controller.js"></script>
     <script src="scripts/app/entities/jugador/jugador-delete-dialog.controller.js"></script>
     <script src="scripts/app/entities/jugador/jugador-detail.controller.js"></script>
-    <script src="scripts/components/entities/jugador/jugador.service.js"></script>
+        <script src="scripts/components/entities/jugador/jugador.service.js"></script>
     <!-- endbuild -->
 </body>
 </html>
